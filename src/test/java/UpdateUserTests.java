@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 @ExtendWith(ThreadLoggingExtension.class)
 public class UpdateUserTests {
@@ -72,6 +73,21 @@ public class UpdateUserTests {
         );
     }
 
+//    @ParameterizedTest
+//    @MethodSource("provideInvalidUserModelsWithMessagesForUpdate")
+//    @DisplayName("Test User Update with Invalid Data and Specific Error Messages")
+//    public void Users_UpdateUsers_Failure_InvalidDataWithMessages(String userId, CreateUserModel updateUserModel, String[] fields, String[] messages) {
+//        Response response = GoRestService.updateUser(userId, updateUserModel);
+//        ValidatableResponse validatableResponse = response.then().statusCode(SC_UNPROCESSABLE_ENTITY).body("data", notNullValue());
+//
+//        // Validate each field's error message
+//        for (int i = 0; i < fields.length; i++) {
+//            validatableResponse.body("data.find { it.field == '" + fields[i] + "' }.message", equalTo(messages[i]));
+//        }
+//
+//        logMetaData(validatableResponse);
+//    }
+
     @ParameterizedTest
     @MethodSource("provideInvalidUserModelsWithMessagesForUpdate")
     @DisplayName("Test User Update with Invalid Data and Specific Error Messages")
@@ -79,9 +95,17 @@ public class UpdateUserTests {
         Response response = GoRestService.updateUser(userId, updateUserModel);
         ValidatableResponse validatableResponse = response.then().statusCode(SC_UNPROCESSABLE_ENTITY).body("data", notNullValue());
 
-        // Validate each field's error message
+        // Validate each field's error message in the order of the provided arguments
         for (int i = 0; i < fields.length; i++) {
-            validatableResponse.body("data.find { it.field == '" + fields[i] + "' }.message", equalTo(messages[i]));
+            String field = fields[i];
+            String expectedMessage = messages[i];
+            String actualMessage = validatableResponse.extract().path("data.find { it.field == '" + field + "' }.message");
+
+            // Log the field and expected message for debugging
+            System.out.println("Validating field: " + field + ", Expected message: " + expectedMessage + ", Actual message: " + actualMessage);
+
+            // Use assertions to validate the error messages
+            assertThat("Error message for field " + field, actualMessage, equalTo(expectedMessage));
         }
 
         logMetaData(validatableResponse);
