@@ -20,10 +20,30 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'  # Add the required distribution parameter
+          distribution: 'adopt'
+
+      - name: Print Java version
+        run: java -version
 
       - name: Build with Maven
         run: mvn clean install
 
+      - name: Print Maven version
+        run: mvn -version
+
       - name: Run tests
         run: mvn test
+
+      - name: Archive test results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: target/surefire-reports/
+
+      - name: Archive logs
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-logs
+          path: target/*.log
