@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: CreateUserTests
 -------------------------------------------------------------------------------
-Tests run: 64, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.792 s - in CreateUserTests
+Tests run: 61, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.603 s - in CreateUserTests
