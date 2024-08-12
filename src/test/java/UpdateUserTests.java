@@ -87,12 +87,40 @@ public class UpdateUserTests {
 //
 //        logMetaData(validatableResponse);
 //    }
+//
+//    @ParameterizedTest
+//    @MethodSource("provideInvalidUserModelsWithMessagesForUpdate")
+//    @DisplayName("Test User Update with Invalid Data and Specific Error Messages")
+//    public void Users_UpdateUsers_Failure_InvalidDataWithMessages(String userId, CreateUserModel updateUserModel, String[] fields, String[] messages) {
+//        Response response = GoRestService.updateUser(userId, updateUserModel);
+//
+//        // Check if the status code is 422 before proceeding
+//        response.then().statusCode(SC_UNPROCESSABLE_ENTITY);
+//
+//        ValidatableResponse validatableResponse = response.then().body("data", notNullValue());
+//
+//        // Validate each field's error message in the order of the provided arguments
+//        for (int i = 0; i < fields.length; i++) {
+//            String field = fields[i];
+//            String expectedMessage = messages[i];
+//            String actualMessage = validatableResponse.extract().path("data.find { it.field == '" + field + "' }.message");
+//
+//            // Log the field and expected message for debugging
+//            System.out.println("Validating field: " + field + ", Expected message: " + expectedMessage + ", Actual message: " + actualMessage);
+//
+//            // Use assertions to validate the error messages
+//            assertThat("Error message for field " + field, actualMessage, equalTo(expectedMessage));
+//        }
+//
+//        logMetaData(validatableResponse);
+//    }
+private static final int SC_TOO_MANY_REQUESTS = 429;
 
     @ParameterizedTest
     @MethodSource("provideInvalidUserModelsWithMessagesForUpdate")
     @DisplayName("Test User Update with Invalid Data and Specific Error Messages")
     public void Users_UpdateUsers_Failure_InvalidDataWithMessages(String userId, CreateUserModel updateUserModel, String[] fields, String[] messages) {
-        Response response = GoRestService.updateUser(userId, updateUserModel);
+        Response response = retryUpdateUser(userId, updateUserModel);
 
         // Check if the status code is 422 before proceeding
         response.then().statusCode(SC_UNPROCESSABLE_ENTITY);
@@ -113,6 +141,27 @@ public class UpdateUserTests {
         }
 
         logMetaData(validatableResponse);
+    }
+
+    // Retry mechanism for handling transient errors
+    private Response retryUpdateUser(String userId, CreateUserModel updateUserModel) {
+        int maxRetries = 3;
+        int retryCount = 0;
+        Response response = null;
+        while (retryCount < maxRetries) {
+            response = GoRestService.updateUser(userId, updateUserModel);
+            if (response.statusCode() != SC_TOO_MANY_REQUESTS) {
+                break;
+            }
+            retryCount++;
+            try {
+                Thread.sleep(1000); // Wait for 1 second before retrying
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        return response;
     }
 
     // Provide invalid user models with specific error messages for parameterized tests
