@@ -184,6 +184,7 @@ public class UpdateUserTests {
             e.printStackTrace();
         }
 
+
         // Ensure userId is not null
         if (userId == null) {
             throw new NullPointerException("User ID is null");
