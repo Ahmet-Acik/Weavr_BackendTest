@@ -93,7 +93,11 @@ public class UpdateUserTests {
     @DisplayName("Test User Update with Invalid Data and Specific Error Messages")
     public void Users_UpdateUsers_Failure_InvalidDataWithMessages(String userId, CreateUserModel updateUserModel, String[] fields, String[] messages) {
         Response response = GoRestService.updateUser(userId, updateUserModel);
-        ValidatableResponse validatableResponse = response.then().statusCode(SC_UNPROCESSABLE_ENTITY).body("data", notNullValue());
+
+        // Check if the status code is 422 before proceeding
+        response.then().statusCode(SC_UNPROCESSABLE_ENTITY);
+
+        ValidatableResponse validatableResponse = response.then().body("data", notNullValue());
 
         // Validate each field's error message in the order of the provided arguments
         for (int i = 0; i < fields.length; i++) {
