@@ -161,38 +161,38 @@ public class UpdateUserTests {
                 createInvalidUserArguments("", "", "", "", new String[]{"name", "gender", "email", "status"}, new String[]{"can't be blank", "can't be blank, can be male of female", "can't be blank", "can't be blank"}));
     }
 
-//    // Helper method to create invalid user arguments
-//    private static Arguments createInvalidUserArguments(String name, String gender, String email, String status, String[] fields, String[] messages) {
-//        String randomEmail = "qatest+" + UUID.randomUUID().toString() + "@test.com";
-//        CreateUserModel createUserModel = new CreateUserModel("Test User", "male", randomEmail, "active");
-//        String userId = GoRestService.createUserAndReturnId(createUserModel);
-//        CreateUserModel updateUserModel = new CreateUserModel(name, gender, email, status);
-//        return Arguments.of(userId, updateUserModel, fields, messages);
-//    }
-
     // Helper method to create invalid user arguments
     private static Arguments createInvalidUserArguments(String name, String gender, String email, String status, String[] fields, String[] messages) {
-        // Log input parameters for debugging
-        System.out.println("Creating invalid user arguments with name: " + name + ", gender: " + gender + ", email: " + email + ", status: " + status);
-
         String randomEmail = "qatest+" + UUID.randomUUID().toString() + "@test.com";
         CreateUserModel createUserModel = new CreateUserModel("Test User", "male", randomEmail, "active");
-        String userId = null;
-        try {
-            userId = GoRestService.createUserAndReturnId(createUserModel);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-        // Ensure userId is not null
-        if (userId == null) {
-            throw new NullPointerException("User ID is null");
-        }
-
+        String userId = GoRestService.createUserAndReturnId(createUserModel);
         CreateUserModel updateUserModel = new CreateUserModel(name, gender, email, status);
         return Arguments.of(userId, updateUserModel, fields, messages);
     }
+//
+//    // Helper method to create invalid user arguments
+//    private static Arguments createInvalidUserArguments(String name, String gender, String email, String status, String[] fields, String[] messages) {
+//        // Log input parameters for debugging
+//        System.out.println("Creating invalid user arguments with name: " + name + ", gender: " + gender + ", email: " + email + ", status: " + status);
+//
+//        String randomEmail = "qatest+" + UUID.randomUUID().toString() + "@test.com";
+//        CreateUserModel createUserModel = new CreateUserModel("Test User", "male", randomEmail, "active");
+//        String userId = null;
+//        try {
+//            userId = GoRestService.createUserAndReturnId(createUserModel);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//        // Ensure userId is not null
+//        if (userId == null) {
+//            throw new NullPointerException("User ID is null");
+//        }
+//
+//        CreateUserModel updateUserModel = new CreateUserModel(name, gender, email, status);
+//        return Arguments.of(userId, updateUserModel, fields, messages);
+//    }
 
     @Test
     @DisplayName("Test User Update with Invalid Email")
