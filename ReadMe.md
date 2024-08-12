@@ -1,4 +1,4 @@
-# QA Engineer test
+### QA Engineer test
 
 ### This is a sample project to test APIs using JUnit and RestAssured. In this project you will find the configuration required to write tests for a number of endpoints by Go Rest (https://gorest.co.in/), as well as a sample test class to start with.
 
@@ -8,9 +8,6 @@
 - Implement whatever is required to write tests for the update user endpoint
 
 ###### The information required to perform those tasks can be found here -> https://gorest.co.in/. Feel free to update the project in any way you see fit.
-
-
-### README.md
 
 ## Project Overview
 This project is designed to test the GoRest API's user creation and update functionalities. It includes various test cases to ensure the API handles different scenarios correctly, such as creating users with valid and invalid data, and updating users with and without authorization tokens.
@@ -50,8 +47,66 @@ The tests are located in the `src/test/java` directory. You can run all tests us
 mvn test
 ```
 
+## Parallel Test Execution
+
+### Configuration
+
+1. **Maven Surefire Plugin**:
+   ```xml
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+               <version>3.0.0-M5</version>
+               <configuration>
+                   <parallel>methods</parallel>
+                   <threadCount>4</threadCount>
+               </configuration>
+           </plugin>
+       </plugins>
+   </build>
+   ```
+
+2. **JUnit Platform Properties**:
+   ```properties
+   junit.jupiter.execution.parallel.enabled=true
+   junit.jupiter.execution.parallel.mode.default=concurrent
+   junit.jupiter.execution.parallel.mode.classes.default=concurrent
+   ```
+
+3. **Thread Logging Extension**:
+   ```java
+   import org.junit.jupiter.api.extension.BeforeEachCallback;
+   import org.junit.jupiter.api.extension.ExtensionContext;
+
+   public class ThreadLoggingExtension implements BeforeEachCallback {
+       @Override
+       public void beforeEach(ExtensionContext context) {
+           System.out.println("Running test on thread: " + Thread.currentThread().getName());
+       }
+   }
+   ```
+
+4. **Inject Extension**:
+   ```java
+   import org.junit.jupiter.api.extension.ExtendWith;
+
+   @ExtendWith(ThreadLoggingExtension.class)
+   public class CreateUserTests {
+       // Test methods
+   }
+   ```
+
+### Benefits
+
+- **Improved Test Execution Speed**: Parallel execution significantly reduces the time required to run tests.
+- **Thread Logging**: The `ThreadLoggingExtension` provides insights into the thread usage during test execution.
+```
+
+```
 ## Test Coverage
-The tests cover the following scenarios:
+The tests cover the following key scenarios, among others:
 - **Successful User Creation**: Verifies that a user can be created with valid data.
 - **User Creation with Invalid Data**: Ensures that the API returns appropriate errors for invalid user data.
 - **User Creation with Invalid Email**: Checks that the API handles invalid email formats correctly.
@@ -68,22 +123,32 @@ The tests cover the following scenarios:
 ## API Endpoints
 The project tests the following API endpoints:
 
-1. **Create User Without Token**:
-    - **Method**: `POST`
-    - **Endpoint**: `/public/v1/users`
-    - **Description**: Tests the creation of a user without providing an authorization token. This helps verify that the API correctly handles requests that lack proper authentication.
+1. **Successful User Creation**:
+   - **Method**: `POST`
+   - **Endpoint**: `/public/v1/users`
+   - **Description**: Verifies that a user can be created with valid data.
 
-2. **Create User With Invalid Token**:
-    - **Method**: `POST`
-    - **Endpoint**: `/public/v1/users`
-    - **Description**: Tests the creation of a user with an invalid authorization token. This ensures that the API properly rejects requests with invalid tokens.
+2. **Successful User Update**:
+   - **Method**: `PUT`
+   - **Endpoint**: `/public/v1/users/{userId}`
+   - **Description**: Verifies that an existing user can be updated with valid data.
 
-3. **Update User Without Token**:
-    - **Method**: `PUT`
-    - **Endpoint**: `/public/v1/users/{userId}`
-    - **Description**: Tests the update of an existing user without providing an authorization token. This checks if the API enforces authentication for update operations.
+3. **Create User Without Token**:
+   - **Method**: `POST`
+   - **Endpoint**: `/public/v1/users`
+   - **Description**: Tests the creation of a user without providing an authorization token. This helps verify that the API correctly handles requests that lack proper authentication.
 
-4. **Update User With Invalid Token**:
-    - **Method**: `PUT`
-    - **Endpoint**: `/public/v1/users/{userId}`
-    - **Description**: Tests the update of an existing user with an invalid authorization token. This validates that the API correctly handles updates with invalid tokens.
+4. **Create User With Invalid Token**:
+   - **Method**: `POST`
+   - **Endpoint**: `/public/v1/users`
+   - **Description**: Tests the creation of a user with an invalid authorization token. This ensures that the API properly rejects requests with invalid tokens.
+
+5. **Update User Without Token**:
+   - **Method**: `PUT`
+   - **Endpoint**: `/public/v1/users/{userId}`
+   - **Description**: Tests the update of an existing user without providing an authorization token. This checks if the API enforces authentication for update operations.
+
+6. **Update User With Invalid Token**:
+   - **Method**: `PUT`
+   - **Endpoint**: `/public/v1/users/{userId}`
+   - **Description**: Tests the update of an existing user with an invalid authorization token. This validates that the API correctly handles updates with invalid tokens.

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="UpdateUserTests" time="15.412" tests="11" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="18"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/test-classes:/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/classes:/Users/drahmetacik/.m2/repository/io/rest-assured/rest-assured/4.4.0/rest-assured-4.4.0.jar:/Users/drahmetacik/.m2/repository/org/codehaus/groovy/groovy/3.0.8/groovy-3.0.8.jar:/Users/drahmetacik/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.8/groovy-xml-3.0.8.jar:/Users/drahmetacik/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/drahmetacik/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/drahmetacik/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/drahmetacik/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/drahmetacik/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/drahmetacik/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/drahmetacik/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/xml-path/4.4.0/xml-path-4.4.0.jar:/Users/drahmetacik/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/drahmetacik/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/drahmetacik/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/drahmetacik/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/json-path/4.4.0/json-path-4.4.0.jar:/Users/drahmetacik/.m2/repository/org/codehaus/groovy/groovy-json/3.0.8/groovy-json-3.0.8.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/rest-assured-common/4.4.0/rest-assured-common-4.4.0.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/json-schema-validator/4.4.0/json-schema-validator-4.4.0.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/Users/drahmetacik/.m2/repository/com/google/guava/guava/28.2-android/guava-28.2-android.jar:/Users/drahmetacik/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/drahmetacik/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/drahmetacik/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/Users/drahmetacik/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/Users/drahmetacik/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/Users/drahmetacik/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.11.0/jackson-databind-2.11.0.jar:/Users/drahmetacik/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.11.0/jackson-annotations-2.11.0.jar:/Users/drahmetacik/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.11.0/jackson-core-2.11.0.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/Users/drahmetacik/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/Users/drahmetacik/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/Users/drahmetacik/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/drahmetacik/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/Users/drahmetacik/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/drahmetacik/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/drahmetacik/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/Users/drahmetacik/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/drahmetacik/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/drahmetacik/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/Users/drahmetacik/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/Users/drahmetacik/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/Users/drahmetacik/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-java/7.0.0/cucumber-java-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-core/7.0.0/cucumber-core-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-gherkin/7.0.0/cucumber-gherkin-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.0.0/cucumber-gherkin-messages-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/Users/drahmetacik/.m2/repository/io/cucumber/tag-expressions/4.0.2/tag-expressions-4.0.2.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-expressions/13.0.1/cucumber-expressions-13.0.1.jar:/Users/drahmetacik/.m2/repository/io/cucumber/datatable/7.0.0/datatable-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-plugin/7.0.0/cucumber-plugin-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/docstring/7.0.0/docstring-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/create-meta/6.0.1/create-meta-6.0.1.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-junit/7.0.0/cucumber-junit-7.0.0.jar:/Users/drahmetacik/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/drahmetacik/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/drahmetacik/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/drahmetacik/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/London"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="18"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.boot.library.path" value="/Users/drahmetacik/Library/Java/JavaVirtualMachines/openjdk-18.0.2.1/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/surefire/surefirebooter929332579562006934.jar /Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/surefire 2024-08-05T14-44-22_646-jvmRun1 surefire8555268781415884475tmp surefire_014610175996943833977tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/test-classes:/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/classes:/Users/drahmetacik/.m2/repository/io/rest-assured/rest-assured/4.4.0/rest-assured-4.4.0.jar:/Users/drahmetacik/.m2/repository/org/codehaus/groovy/groovy/3.0.8/groovy-3.0.8.jar:/Users/drahmetacik/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.8/groovy-xml-3.0.8.jar:/Users/drahmetacik/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/drahmetacik/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/drahmetacik/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/drahmetacik/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/drahmetacik/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/drahmetacik/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/drahmetacik/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/xml-path/4.4.0/xml-path-4.4.0.jar:/Users/drahmetacik/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/drahmetacik/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/drahmetacik/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/drahmetacik/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/json-path/4.4.0/json-path-4.4.0.jar:/Users/drahmetacik/.m2/repository/org/codehaus/groovy/groovy-json/3.0.8/groovy-json-3.0.8.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/rest-assured-common/4.4.0/rest-assured-common-4.4.0.jar:/Users/drahmetacik/.m2/repository/io/rest-assured/json-schema-validator/4.4.0/json-schema-validator-4.4.0.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/Users/drahmetacik/.m2/repository/com/google/guava/guava/28.2-android/guava-28.2-android.jar:/Users/drahmetacik/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/drahmetacik/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/drahmetacik/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/Users/drahmetacik/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/Users/drahmetacik/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/Users/drahmetacik/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.11.0/jackson-databind-2.11.0.jar:/Users/drahmetacik/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.11.0/jackson-annotations-2.11.0.jar:/Users/drahmetacik/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.11.0/jackson-core-2.11.0.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/Users/drahmetacik/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/Users/drahmetacik/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/Users/drahmetacik/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/Users/drahmetacik/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/drahmetacik/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/Users/drahmetacik/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/drahmetacik/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/drahmetacik/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/Users/drahmetacik/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/drahmetacik/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/drahmetacik/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/Users/drahmetacik/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/Users/drahmetacik/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/Users/drahmetacik/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-java/7.0.0/cucumber-java-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-core/7.0.0/cucumber-core-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-gherkin/7.0.0/cucumber-gherkin-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.0.0/cucumber-gherkin-messages-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/Users/drahmetacik/.m2/repository/io/cucumber/tag-expressions/4.0.2/tag-expressions-4.0.2.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-expressions/13.0.1/cucumber-expressions-13.0.1.jar:/Users/drahmetacik/.m2/repository/io/cucumber/datatable/7.0.0/datatable-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-plugin/7.0.0/cucumber-plugin-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/docstring/7.0.0/docstring-7.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/Users/drahmetacik/.m2/repository/io/cucumber/create-meta/6.0.1/create-meta-6.0.1.jar:/Users/drahmetacik/.m2/repository/io/cucumber/cucumber-junit/7.0.0/cucumber-junit-7.0.0.jar:/Users/drahmetacik/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/drahmetacik/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/drahmetacik/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/drahmetacik/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/drahmetacik"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-08-18"/>
+    <property name="java.home" value="/Users/drahmetacik/Library/Java/JavaVirtualMachines/openjdk-18.0.2.1/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest/target/surefire/surefirebooter929332579562006934.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="18.0.2.1+1-1"/>
+    <property name="user.name" value="drahmetacik"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.6.8"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/drahmetacik/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/cm/7pb_c58s5tq928g8m0gnl3fc0000gn/T/"/>
+    <property name="java.version" value="18.0.2.1"/>
+    <property name="user.dir" value="/Users/drahmetacik/Downloads/Weavr - QA Engineer Test AhmetA/Weavr_BackendTest"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/drahmetacik/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="18.0.2.1+1-1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="62.0"/>
+  </properties>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[8]" classname="UpdateUserTests" time="1.03">
+    <system-out><![CDATA[Running test on thread: ForkJoinPool-1-worker-2
+Meta: null
+Data: [{field=gender, message=can't be blank, can be male of female}, {field=email, message=has already been taken}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[5]" classname="UpdateUserTests" time="2.354">
+    <system-out><![CDATA[Meta: null
+Meta: null
+Meta: null
+Data: [{field=name, message=can't be blank}, {field=gender, message=can't be blank, can be male of female}, {field=email, message=has already been taken}]
+Data: [{field=email, message=can't be blank}, {field=status, message=can't be blank}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[3]" classname="UpdateUserTests" time="2.753">
+    <system-out><![CDATA[Data: [{field=email, message=can't be blank}, {field=gender, message=can't be blank, can be male of female}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[2]" classname="UpdateUserTests" time="2.754"/>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[11]" classname="UpdateUserTests" time="1.029">
+    <system-out><![CDATA[Meta: null
+Data: [{field=email, message=can't be blank}, {field=name, message=can't be blank}, {field=status, message=can't be blank}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[6]" classname="UpdateUserTests" time="1.102">
+    <system-out><![CDATA[Meta: null
+Data: [{field=email, message=has already been taken}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[14]" classname="UpdateUserTests" time="1.035">
+    <system-out><![CDATA[Meta: null
+Data: [{field=email, message=can't be blank}, {field=name, message=can't be blank}, {field=gender, message=can't be blank, can be male of female}, {field=status, message=can't be blank}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[12]" classname="UpdateUserTests" time="1.305">
+    <system-out><![CDATA[Meta: null
+Data: [{field=name, message=can't be blank}, {field=gender, message=can't be blank, can be male of female}, {field=status, message=can't be blank}, {field=email, message=has already been taken}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[13]" classname="UpdateUserTests" time="1.425">
+    <system-out><![CDATA[Meta: null
+Data: [{field=email, message=can't be blank}, {field=gender, message=can't be blank, can be male of female}, {field=status, message=can't be blank}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[7]" classname="UpdateUserTests" time="1.581">
+    <system-out><![CDATA[Meta: null
+Data: [{field=name, message=can't be blank}, {field=email, message=has already been taken}]
+]]></system-out>
+  </testcase>
+  <testcase name="Users_UpdateUsers_Failure_InvalidDataWithMessages(String, CreateUserModel, String[], String[])[9]" classname="UpdateUserTests" time="1.652">
+    <system-out><![CDATA[Meta: null
+Data: [{field=email, message=can't be blank}]
+]]></system-out>
+  </testcase>
+</testsuite>
